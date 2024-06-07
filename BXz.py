@@ -401,7 +401,7 @@ def rifat1():
 	opt = input('[√] SELECT OPT: ')
 	if opt =='1':
 		random_number1()
-	if opt =='1':
+	if opt =='2':
 		random_number2()
 	if opt =='3':
 		random_number3()
